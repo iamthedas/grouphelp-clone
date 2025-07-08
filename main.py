@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, ChatMemberHandler, CallbackQueryHandler
 import os
 
-TOKEN = "8007873539:AAE86STXidvvMbE3Jqt-E-Y3541JQ5uti88"
+TOKEN = os.environ.get("TG_BOT_TOKEN")
 
 WELCOME_MESSAGE = f"""👋 Welcome {{name}}!
 
