@@ -1,5 +1,5 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, ChatMemberHandler, CallbackQueryHandler, CallbackContext
+from telegram.ext import ApplicationBuilder, ChatMemberHandler, CallbackQueryHandler
 import os
 
 TOKEN = os.environ.get("TG_BOT_TOKEN")
@@ -14,7 +14,7 @@ BUTTONS = [
     [InlineKeyboardButton("🔗 Share Group", url="https://t.me/share/url?url=https://t.me/YourGroupLink")]
 ]
 
-async def send_welcome(update: Update, context: CallbackContext.DEFAULT_TYPE):
+async def send_welcome(update: Update, context):
     new_member = update.chat_member.new_chat_member
     if new_member.status == "member":
         name = new_member.user.mention_html()
@@ -27,7 +27,7 @@ async def send_welcome(update: Update, context: CallbackContext.DEFAULT_TYPE):
             reply_markup=reply_markup
         )
 
-async def handle_button(update: Update, context: CallbackContext.DEFAULT_TYPE):
+async def handle_button(update: Update, context):
     query = update.callback_query
     if query.data.startswith("alert:"):
         msg = query.data.split("alert:")[1]

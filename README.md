@@ -1,3 +1,3 @@
-# Safe GroupHelp Bot
+# Final GroupHelp Bot (Fixed)
 
-This bot sends a welcome message with popup and share buttons when a user joins the Telegram group.
+This bot sends welcome messages with alert buttons and share links when new members join your Telegram group.
