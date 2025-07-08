@@ -1,1 +1,1 @@
-# Bot logic placeholder
+# Bot logic
