@@ -5,21 +5,27 @@ from bot.handlers.join import join_handler
 from bot.handlers.buttons import button_handler
 from bot.handlers.settings import settings_handler
 
-# Load bot token from Railway variable
+# Load token
 TOKEN = os.environ.get("TG_BOT_TOKEN")
-print("DEBUG_TOKEN:", repr(TOKEN))  # Log token to verify it's not None or empty
+print("DEBUG_TOKEN:", repr(TOKEN))  # Show raw value from env
 
 def main():
-    app = ApplicationBuilder().token(TOKEN).build()
+    if not TOKEN:
+        print("❌ ERROR: Token is missing or empty. Check Railway → Variables.")
+        return  # Exit before crashing
 
-    # Register all handlers
-    app.add_handler(start_handler)
-    app.add_handler(settings_handler)
-    app.add_handler(join_handler)
-    app.add_handler(button_handler)
+    try:
+        app = ApplicationBuilder().token(TOKEN).build()
 
-    print("Bot started")
-    app.run_polling()
+        app.add_handler(start_handler)
+        app.add_handler(settings_handler)
+        app.add_handler(join_handler)
+        app.add_handler(button_handler)
 
-if __name__ == "__main__":  # ✅ Double underscores — MUST be exact
+        print("✅ Bot started")
+        app.run_polling()
+    except Exception as e:
+        print("❌ EXCEPTION:", str(e))
+
+if name == "main":
     main()
