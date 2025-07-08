@@ -21,5 +21,5 @@ def main():
     print("Bot started")
     app.run_polling()
 
-if name == "main":  # ✅ Double underscores — MUST be exact
+if __name__ == "__main__":  # ✅ Double underscores — MUST be exact
     main()
