@@ -5,7 +5,11 @@ import os
 TOKEN = os.environ.get("TG_BOT_TOKEN")
 
 WELCOME_MESSAGE = (
-    "👋 Welcome {name}!
+    WELCOME_MESSAGE = f"""
+👋 Welcome {{name}}!
+
+Before you proceed, please make sure to read the rules and share the group ❤️
+"""
 
 "
     "Before you proceed, please make sure to read the rules and share the group ❤️"
