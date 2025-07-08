@@ -1,3 +1,6 @@
-# Final GroupHelp Bot (Fixed)
+# Modular GroupHelp Clone Bot
 
-This bot sends welcome messages with alert buttons and share links when new members join your Telegram group.
+✅ /start and /settings  
+✅ Welcome message with popup alert button  
+✅ Button layout like GroupHelp  
+✅ Deployable to Railway or Replit
