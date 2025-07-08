@@ -1,3 +1,3 @@
-# GroupHelp Welcome Bot
+# Safe GroupHelp Bot
 
-A self-hosted Telegram bot that sends welcome messages with popup alert and share buttons.
+This bot sends a welcome message with popup and share buttons when a user joins the Telegram group.

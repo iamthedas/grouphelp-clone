@@ -4,16 +4,10 @@ import os
 
 TOKEN = os.environ.get("TG_BOT_TOKEN")
 
-WELCOME_MESSAGE = (
-    WELCOME_MESSAGE = f"""
-👋 Welcome {{name}}!
+WELCOME_MESSAGE = f"""👋 Welcome {{name}}!
 
 Before you proceed, please make sure to read the rules and share the group ❤️
 """
-
-"
-    "Before you proceed, please make sure to read the rules and share the group ❤️"
-)
 
 BUTTONS = [
     [InlineKeyboardButton("📂 Open Media", callback_data="alert:You must share this group once to unlock media!")],
