@@ -1,7 +1,6 @@
-from telegram.ext import CommandHandler, ContextTypes
-from telegram import Update
+from telegram.ext import CommandHandler
 
-async def settings(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("⚙️ Settings menu will appear here soon.")
+def settings(update, context):
+    update.message.reply_text('Settings menu coming soon.')
 
-settings_handler = CommandHandler("settings", settings)
+settings_handler = CommandHandler('settings', settings)
