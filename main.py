@@ -1,13 +1,12 @@
-    import os
+import os
 from telegram.ext import ApplicationBuilder
 from bot.handlers.start import start_handler
 from bot.handlers.join import join_handler
 from bot.handlers.buttons import button_handler
 from bot.handlers.settings import settings_handler
 
-# Read token directly from Railway env variable
 TOKEN = os.environ.get("TG_BOT_TOKEN")
-print(f"DEBUG_TOKEN: {repr(TOKEN)}")  # For Railway logs
+print(f"DEBUG_TOKEN: {repr(TOKEN)}")  # Show token in Railway logs
 
 def main():
     if not TOKEN:
