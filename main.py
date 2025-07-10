@@ -1,17 +1,13 @@
-import os
-from dotenv import load_dotenv
+    import os
 from telegram.ext import ApplicationBuilder
 from bot.handlers.start import start_handler
 from bot.handlers.join import join_handler
 from bot.handlers.buttons import button_handler
 from bot.handlers.settings import settings_handler
 
-# Load environment variables (from Railway or .env file)
-load_dotenv()
-
-# Read token
+# Read token directly from Railway env variable
 TOKEN = os.environ.get("TG_BOT_TOKEN")
-print(f"DEBUG_TOKEN: {repr(TOKEN)}")  # For logs
+print(f"DEBUG_TOKEN: {repr(TOKEN)}")  # For Railway logs
 
 def main():
     if not TOKEN:
