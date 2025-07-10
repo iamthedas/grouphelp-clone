@@ -5,20 +5,12 @@ from bot.handlers.join import join_handler
 from bot.handlers.buttons import button_handler
 from bot.handlers.settings import settings_handler
 
-# Debug: Print ALL environment variables
-print("🧪 ENVIRONMENT VARIABLES:")
-for key, val in os.environ.items():
-    print(f"{key} = {val}")
+# ✅ DEBUG PRINT for token
+print("DEBUG_TOKEN:", os.environ.get("TG_BOT_TOKEN"))
 
-# Read token
 TOKEN = os.environ.get("TG_BOT_TOKEN")
-print(f"DEBUG_TOKEN: {repr(TOKEN)}")
 
 def main():
-    if not TOKEN:
-        print("❌ ERROR: Token is missing or empty. Check Railway 》Variables")
-        return
-
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(start_handler)
@@ -26,8 +18,9 @@ def main():
     app.add_handler(join_handler)
     app.add_handler(button_handler)
 
-    print("✅ Bot started")
+    print("Bot started")
     app.run_polling()
 
 if __name__ == "__main__":
     main()
+
